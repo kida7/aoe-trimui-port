@@ -1,0 +1,10 @@
+{
+    "package": "portmaster-aoe",
+    "label": "Age of Empires",
+    "icontop": "icon.png",
+    "icon": "icon.png",
+    "background": "",
+    "themecolor": "C09B42",
+    "launch": "/mnt/SDCARD/Ports/aoe/launch.sh",
+    "description": "Age of Empires: The Rise of Rome running via Box86 and Wine"
+}

@@ -1,0 +1,6 @@
+{
+  "label": "Age of Empires",
+  "icon": "icon.png",
+  "launch": "launch.sh",
+  "description": "Age of Empires: The Rise of Rome (Microsoft) running via Box86 + Wine"
+}

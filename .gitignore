@@ -1,0 +1,24 @@
+# Game install (user-supplied, commercial): never commit
+/game/
+/port/game/
+SAVEGAME/
+
+# Third-party runtime pieces: fetched/built separately (see README.md)
+/wine/
+/weston/
+/box86
+/box86-dbg
+/gptokeyb
+/gptokeyb2.armhf
+/prefix_template.tar.gz
+/xmirror
+/midisynth
+*.sf2
+
+# Scratch / device dumps / backups
+*.bak-*
+.quarantine-*
+*.log
+*.tga
+*.raw
+*.rgba

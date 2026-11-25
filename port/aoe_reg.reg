@@ -1,0 +1,50 @@
+Windows Registry Editor Version 5.00
+
+; Registry for Age of Empires: The Rise of Rome on Wine. The values follow the game's own Setupreg.exe output (install on a
+; hard disk, InstallType 3); every path points at D:\ = the game folder, which Wine presents as a CD-ROM drive (see README).
+; The retail product ID (PID) is deliberately left out.
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Games\Age of Empires\1.00]
+"Custom Mouse"=dword:00000000
+"Game File Number"=dword:00000000
+"CDPath"="D:\\"
+"PID"="00000-000-0000000-00000"
+"InstallType"="3"
+"InstallationDirectory"="D:\\"
+"Launched"="1"
+"VersionType"="RetailVersion"
+"Version"="1.0b"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Microsoft Games\Age of Empires Expansion\1.0]
+"CDPath"="D:\\"
+"Version"="1.0"
+"Launched"="1"
+"EXE Path"="D:\\"
+"VersionType"="RetailVersion"
+"InstalledGroup"="3"
+"LangID"=dword:00000009
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\DirectPlay\Applications\Age of Empires Expansion]
+"Guid"="{8701C5C1-337B-11d2-839B-00609707F508}"
+"File"="EmpiresX.Exe"
+"CommandLine"="lobby"
+"CurrentDirectory"="D:\\"
+"Path"="D:\\"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Games\Age of Empires\1.00]
+"CDPath"="D:\\"
+"Version"="1.00"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Microsoft Games\Age of Empires Expansion\1.0]
+"CDPath"="D:\\"
+"Version"="1.0"
+
+[HKEY_LOCAL_MACHINE\Software\Wine\Drives]
+"d:"="cdrom"
+"d"="cdrom"
+
+[HKEY_CURRENT_USER\Software\Wine\X11 Driver]
+"UseXVidMode"="N"
+
+[HKEY_CURRENT_USER\Software\Wine\Drivers]
+"Audio"="alsa"

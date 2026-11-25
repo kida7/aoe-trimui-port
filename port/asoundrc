@@ -1,0 +1,36 @@
+# AoE port (copied to $HOME/.asoundrc by launch.sh when that file does not exist).
+# Wine's ALSA driver lists every capture and playback PCM it can open. DirectSound then picked a CAPTURE device (the microphone,
+# hw and exclusive) as its "default playback" endpoint and failed ("Device or resource busy", then
+# "Unable to set sw params"): no sound. The game only plays sound, so the microphone side is made unavailable:
+# the default device has no capture, and the explicit plughw:C,D devices Wine probes cannot be opened.
+pcm.!default {
+    type asym
+    playback.pcm "Playback"
+    capture.pcm "hw:99"
+}
+pcm.!plughw {
+    @args [ CARD DEV SUBDEV ]
+    @args.CARD {
+        type string
+        default {
+            @func refer
+            name defaults.pcm.card
+        }
+    }
+    @args.DEV {
+        type integer
+        default {
+            @func refer
+            name defaults.pcm.device
+        }
+    }
+    @args.SUBDEV {
+        type integer
+        default {
+            @func refer
+            name defaults.pcm.subdevice
+        }
+    }
+    type plug
+    slave.pcm "hw:99"
+}
