@@ -37,6 +37,9 @@ The Wine prefix is `/tmp/wine_aoe` and survives between launches. If another lau
 own `WINEPREFIX` (e.g. `/tmp/wine_aoeport`).
 
 ## Setting up a device
+Easiest: unzip the release package to the SD card root, copy your game files (the folder that contains `EMPIRESX.EXE`) into
+`Ports/aoe/game/`, start "Age of Empires". On first start `launch.sh` installs the bundled cnc-ddraw from `Ports/aoe/game-overlay/`.
+
 1. Put the user's own game install in `Ports/aoe/game/` (needs `EMPIRESX.EXE`, `DATA`, `DATA2`, `SOUND`, ... plus cnc-ddraw's `ddraw.dll`).
 2. Runtimes in `Ports/aoe/`: `box86` (v0.3.9 built from source commit `bb716a2`, armhf), `wine/` (Wine 6.0 32-bit x86 "lean"),
    `weston/` (Westonpack 0.2.7 with `westonwrap32.sh`), `gptokeyb`, `prefix_template.tar.gz`.

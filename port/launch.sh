@@ -126,6 +126,15 @@ RESUME_WATCH=$!
 # "headless noop kiosk $WGL" renders via SDL2 KMSDRM while running Xwayland cleanly.
 # 3b. Screen output: weston runs headless (no real output), so mirror the game's X11 window
 # to the real screen with xmirror (raw X11 protocol + SDL2 KMSDRM). See README.md in the port repo (aoe-trimui-port).
+# First run after the user copied the game data: install the bundled cnc-ddraw (game-overlay/) into game/. The game's own
+# ddraw.dll (the "EGO Play" edition ships one that needs Direct3D) is kept as ddraw.dll.ego. Skipped once it is in place.
+OV="$PORTDIR/game-overlay"
+if [ -f "$OV/ddraw.dll" ] && [ -d "$PORTDIR/game" ] && ! cmp -s "$OV/ddraw.dll" "$PORTDIR/game/ddraw.dll"; then
+    if [ -f "$PORTDIR/game/ddraw.dll" ] && [ ! -f "$PORTDIR/game/ddraw.dll.ego" ]; then
+        cp "$PORTDIR/game/ddraw.dll" "$PORTDIR/game/ddraw.dll.ego"
+    fi
+    cp "$OV/ddraw.dll" "$OV/ddraw.ini" "$OV/ddraw.ini.sw" "$PORTDIR/game/"
+fi
 if [ -f "$PORTDIR/game/ddraw.ini.sw" ]; then
     cp "$PORTDIR/game/ddraw.ini.sw" "$PORTDIR/game/ddraw.ini"   # cnc-ddraw, GDI renderer
 fi
